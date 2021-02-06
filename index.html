@@ -1,1 +1,84 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Anonymous animals</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"><style>*{box-sizing:border-box}body,html{height:100%;width:100%}.container{position:relative;top:50%;left:50%;transform:translate(-50%,-50%)}#image{background-color:#000}</style></head><body> <div class="container"> <div class="row"> <h1>Anonymous animals</h1> <div class="col"> <img id="image" alt="animal"> <div> <span id="name"></span> </div> </div> <div class="col"> <button type="button" class="btn btn-primary" id="btn">Change</button> </div> </div> </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> <script src="/anonymous.d8e129f1.js"></script> <script>var n=function(n){return document.querySelector(n)},e=n("#image"),t=n("#name"),a=n("#btn"),c=function(n,e){n.src=e},o=function(n,e){n.textContent=e},u=function(){var n=anonymous.default.generate(),a=n.name,u=n.image;c(e,u),o(t,a)};a.addEventListener("click",function(){u()}),u();</script> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymous animals</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .container {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #image {
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Anonymous animals</h1>
+        <div class="col">
+          <img id="image" alt="animal" />
+          <div>
+            <span id="name"></span>
+          </div>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" id="btn">Change</button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./dist/anonymous.js"></script>
+    <script>
+      const $ = (sel) => document.querySelector(sel);
+      const imageEl = $("#image");
+      const nameEl = $("#name");
+      const btnEl = $("#btn");
+
+      const setImage = (el, image) => {
+        el.src = image;
+      };
+
+      const setName = (el, name) => {
+        el.textContent = name;
+      };
+
+      const gen = () => {
+        const { name, image } = anonymous.default.generate();
+        setImage(imageEl, image);
+        setName(nameEl, name);
+      };
+
+      btnEl.addEventListener("click", () => {
+        gen();
+      });
+      gen();
+    </script>
+  </body>
+</html>
