@@ -1,6 +1,6 @@
 {
   "name": "anonymous-animals-gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "anonymous animals",
   "main": "dist/anonymous.min.js",
   "scripts": {
