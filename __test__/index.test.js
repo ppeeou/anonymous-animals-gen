@@ -1,4 +1,4 @@
-import anonymous from "../dist/anonymous";
+import anonymous from "../dist/anonymous.min";
 import animals from "../src/animals";
 
 describe("anonymous", () => {

@@ -6,10 +6,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "anonymous.js",
-    library: {
-      root: "anonymous",
-    },
-    libraryTarget: "umd",
+    library: "anonymous",
+    libraryTarget: "window",
+    module: false,
   },
   module: {
     rules: [
@@ -38,6 +37,6 @@ module.exports = {
       },
     ],
   },
-
+  target: ["web"],
   devtool: "source-map",
 };
