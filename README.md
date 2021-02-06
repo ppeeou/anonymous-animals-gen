@@ -1,13 +1,15 @@
 <h1 align="center">Welcome to anonymous👋</h1>
 
-# install
+
+
+# Install
 
 ```
 npm install anonymous-animals-gen
 ```
 
 
-# how to use
+# How to use
 
 - generate
 
@@ -23,6 +25,8 @@ const { name, image, animal } = anonymous.generate({ prefix: "Anonymous" });
 // name   -> Anonymous elastic giraffe
 // image  -> data:image/png;base64,...
 // animal -> giraffe
+
+<img src={image} style={{background:'black'}}>
 ```
 
 - getImage
