@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous animals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>* {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .container {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #image {
+        background-color: black;
+      }</style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Anonymous animals</h1>
+        <div class="col">
+          <img id="image" alt="animal">
+          <div>
+            <label for="animal-label" class="form-label">Name</label>
+            <span id="name">hello </span>
+          </div>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" id="btn">Change</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script src="/anonymous.54719c5c.js"></script>
+    <script>var $ = function $(sel) {
+  return document.querySelector(sel);
+};
+
+var imageEl = $("#image");
+var nameEl = $("#name");
+var btnEl = $("#btn");
+
+var setImage = function setImage(el, image) {
+  el.src = image;
+};
+
+var setName = function setName(el, name) {
+  el.textContent = name;
+};
+
+var gen = function gen() {
+  var _anonymous$default$ge = anonymous.default.generate(),
+      name = _anonymous$default$ge.name,
+      image = _anonymous$default$ge.image;
+
+  setImage(imageEl, image);
+  setName(nameEl, name);
+};
+
+btnEl.addEventListener("click", function () {
+  gen();
+});
+gen();</script>
+  </body>
+</html>
