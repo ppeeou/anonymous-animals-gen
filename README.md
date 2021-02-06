@@ -3,18 +3,16 @@
 # install
 
 ```
-npm install anonymous
+npm install anonymous-animals-gen
 ```
+
 
 # how to use
-
-```
-npm install anonymous
-```
 
 - generate
 
 ```js
+import anonymous from 'anonymous-animals-gen'
 const { name, image, animal } = anonymous.generate();
 // name   -> elastic giraffe
 // image  -> data:image/png;base64,...
@@ -30,6 +28,7 @@ const { name, image, animal } = anonymous.generate({ prefix: "Anonymous" });
 - getImage
 
 ```js
+import anonymous from 'anonymous-animals-gen'
 const { animal } = anonymous.generate();
 const image = anonymous.getImage(animal);
 
