@@ -15,12 +15,13 @@ const adjectiveSize = adjectives.length;
  * @property {string} image
  * @property {string} animal
  */
-export default {
+
+const anonymous = () => {
   /**
    * @param {options} options
    * @returns {info}
    */
-  generate(options = {}) {
+  function generate(options = {}) {
     const { prefix } = options;
     const adjective = adjectives[Math.floor(Math.random() * adjectiveSize)];
     const animal = animals[Math.floor(Math.random() * animalSize)];
@@ -32,14 +33,21 @@ export default {
       image,
       animal,
     };
-  },
+  }
 
   /**
    * @param {string} animal
    * @returns {string}
    */
-  getImage(animal) {
+  function getImage(animal) {
     const image = animalImages[animal];
     return image;
-  },
+  }
+
+  return {
+    generate,
+    getImage,
+  };
 };
+
+export default anonymous();
